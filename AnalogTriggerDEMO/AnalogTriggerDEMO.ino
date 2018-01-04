@@ -1,15 +1,16 @@
 
 //REFERENCE: https://forum.processing.org/two/discussion/25252/gui-for-arduino-code/p1
-//INSTRUCTIONS:
-//* Heart beat runs on pin 13 and blinks at defined rate indicating normal operation
-//* Input v to toggle verbose. When verbose is on, every time the selected anlaog input is
-//  above threshold, a data is send to serial output. It prints "-[ADC val]   0000000000000000000000000000000000000000000000000000000000000000"
-//* Input r to inquire current value of selected anlaog input. It prints  "Threshold: [Thresh val] Current AI value: [ADC val]"
-//* Input a value from 1 to 9 to map threshold from 0 to 1023. It prints "Threshold old: [old thesh] New: [new thresh]"
 
-//* Circuit: LED anode (long leg) into DO. LED's cathode to resistor and then into ground.
+//INSTRUCTIONS:
+//* Heart beat runs on pin 13 and it blinks at a defined rate indicating normal operation  
+//* Input v to toggle verbose. When verbose is on, every time the selected analog input is
+//  above threshold, a data is sent to serial output. It prints "-[ADC val]   0000000000000000000000000000000000000000000000000000000000000000"  
+//* Input r to inquire current value of selected anlaog input. It prints  "Threshold: [Thresh val] Current AI value: [ADC val]"  
+//* Input a value from 1 to 9 to map threshold from 0 to 1023. It prints "Threshold old: [old thesh] New: [new thresh]"  
+//
+//* Circuit: LED anode (long leg) into DO. LED's cathode to resistor and then into ground.  
 //* Anolog input reads a positive signal. Circuit capacitance can induce a signal on the input. So for proper triggering:
-//  Use a toggle switch. Positive--->switch--->*--->resistor--->Ground then Analog readout at (*)
+//  Use a toggle switch and then positive terminal--->switch--->*--->resistor--->Ground. Notice you need to do Analog readout at (*) 
 
 const int INCHAN = A4;
 const int OUTCHAN = 9;  //Digital output 9
